@@ -1,0 +1,82 @@
+from django.contrib import admin
+from django.urls import path
+from HIRE import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('login/', views.login, name='login'),
+    path('adminRegister/', views.admin_register, name='adminRegister'),
+    path('forgetPassword/', views.forget_password, name='forgetPassword'),
+    # path('verify-admin-email/<int:user_id>/', views.verify_admin_email, name='verify_admin_email'),
+    path('verify-reset-otp/<int:user_id>/', views.verify_reset_otp, name='verify_reset_otp'),
+    path('adminDashboard/', views.admin_dashboard, name='adminDashboard'),
+    path('tnpDashboard/', views.tnp_dashboard, name='tnpDashboard'),
+    path('companyDashboard/', views.company_dashboard, name='companyDashboard'),    
+    path('studentDashboard/', views.student_dashboard, name='studentDashboard'),
+    path('college/<int:college_id>/details/', views.college_details, name='college_details'),
+    path('addCollege/', views.add_college, name='addCollege'),
+    path('adminNotification/', views.admin_notification, name='adminNotification'),
+    path('adminProfile/', views.admin_profile, name='adminProfile'),
+    path('adminViewData/', views.admin_view_data, name='adminViewData'),
+    path('edit/<str:table_name>/<int:record_id>/', views.edit_record, name='edit_record'),
+    path('delete/<str:table_name>/<int:record_id>/', views.delete_record, name='delete_record'),
+    path('adminReports/', views.admin_reports, name='admin_reports'),
+    path('companyJobPosts/', views.company_job_posts, name='companyJobPosts'),
+    path('companyJobPosts/<int:job_id>/applicants/', views.get_job_applicants, name='company_job_applicants'),
+    path('job-details/<int:job_id>/', views.company_job_details, name='company_job_details'),
+    path('application-details/<int:app_id>/', views.company_application_details, name='company_application_details'),
+    path('companyNotification/', views.company_notifications, name='companyNotification'),
+    path('companyProfile/', views.company_profile, name='companyProfile'),
+    path('companyReport/', views.company_reports, name='companyReport'),
+    path("getJobsByCollege/<int:college_id>/", views.get_jobs_by_college, name="get_jobs_by_college"),
+    path("getRoundsByJob/<int:job_id>/", views.get_rounds_by_job, name="get_rounds_by_job"),
+    path("getPassedStudentsCompany/<int:job_id>/<int:round_id>/", views.get_passed_students_company, name="get_passed_students_company"),
+
+
+    path('companySelectionTest/', views.company_selection_test, name='companySelectionTest'),
+    path('companyEvaluateTest/', views.company_evaluate_test, name='companyEvaluateTest'),
+    path("company/save-gd-evaluation/<int:job_id>/<int:group_id>/", views.company_save_gd_evaluation, name="company_save_gd_evaluation"),
+    path("company/save-tech-evaluation/", views.company_save_tech_evaluation, name="company_save_tech_evaluation"),
+
+    path("company/save-hr-evaluation/", views.company_save_hr_evaluation, name="company_save_hr_evaluation"),
+
+    path("saveAptitudeQuiz/", views.save_aptitude_quiz, name="save_aptitude_quiz"),
+    path("ai-generate-quiz/", views.ai_generate_and_save_quiz, name="ai_generate_and_save_quiz"),
+    path("company/generate-gd-groups/", views.generate_gd_groups, name="generate_gd_groups"),
+    path("company/send-gd-link/<int:group_id>/", views.company_send_gd_link, name="companySendGDLink"),
+    path("company/update-gd-schedule/<int:group_id>/", views.company_update_gd_schedule, name="companyUpdateGDSchedule"),
+    path("company/get-eligible-tech-students/<int:job_id>/", views.company_get_eligible_tech_students, name="company_get_eligible_tech_students"),
+    path("company/save-tech-interview/<int:job_id>/<int:student_id>/", views.company_save_tech_interview, name="company_save_tech_interview"),
+
+    # HR Interview Scheduling Routes
+    path("company/get-eligible-hr-students/<int:job_id>/", views.company_get_eligible_hr_students, name="company_get_eligible_hr_students"),
+    path("company/save-hr-interview/<int:job_id>/<int:student_id>/", views.company_save_hr_interview, name="company_save_hr_interview"),
+
+    # path("company/send-gd-link/<int:group_id>/", views.company_send_gd_link, name="companySendGDLink"),
+    path('student-job-details/<int:job_id>/', views.job_details, name='job_details'),
+    path('student-application-details/<int:app_id>/', views.application_details, name='application-details'),
+    path('studentNotification/', views.student_notifications, name='studentNotification'),
+    path('studentProfile/', views.student_profile, name='studentProfile'),
+    path('student-job-details/<int:job_id>/', views.student_job_details, name='student_job_details'),
+    path('apply-job/<int:job_id>/', views.apply_job, name='apply_job'),
+    path('studentCompanies/', views.student_companies, name='studentCompanies'),
+    path('studentTest/', views.student_test, name='studentTest'),
+    path("student/start-quiz/<int:round_id>/", views.student_start_quiz, name="student_start_quiz"),
+    path("submit-quiz/<int:round_id>/", views.submit_quiz, name="submit_quiz"),
+    path('studentReport/', views.student_reports, name='studentReport'),
+    path('tnpAddMember/', views.tnp_add_member, name='tnpAddMember'),
+    path('tnpNotification/', views.tnp_notifications, name='tnpNotification'),
+    path('tnpProfile/', views.tnp_profile, name='tnpProfile'),
+    path('tnpReport/', views.tnp_reports, name='tnpReport'),
+    path('getCompanyJobs/<int:company_id>/', views.get_company_jobs, name='get_company_jobs'),
+    path('getJobRounds/<int:job_id>/', views.get_job_rounds, name='get_job_rounds'),
+    path('getPassedStudents/<int:job_id>/<int:round_id>/', views.get_passed_students, name='get_passed_students'),
+
+    # TNP View Data
+    path('tnpViewData/', views.tnp_view_data, name='tnpViewData'),
+    path('tnp/edit/<str:table_name>/<int:record_id>/', views.tnp_edit_record, name='tnp_edit_record'),
+    path('tnp/delete/<str:table_name>/<int:record_id>/', views.tnp_delete_record, name='tnp_delete_record'),
+    path('tnp/student-details/<int:student_id>/', views.tnp_student_details, name='tnp_student_details'),
+    path('tnp/company-details/<int:job_id>/', views.tnp_company_details, name='tnp_company_details'),
+    path('logout/', views.user_logout, name='logout'),
+]
