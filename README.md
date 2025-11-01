@@ -329,12 +329,6 @@ Open a Pull Request on GitHub.
          College-wide placement statistics dashboard
 
 
-👨‍💻 Contributor
-        
-        Name	Role	Contribution
-        Dhrumil Trivedi	Full Stack Developer & Project Lead	Designed and developed the entire HireVerse platform — including system architecture, backend (Django models, views, and authentication), frontend (Bootstrap-based dashboards), database schema, AI utilities, and deployment setup. Responsible for full lifecycle: concept, development, testing, and documentation.
-
-
 📜 License
 
 
@@ -354,3 +348,6 @@ You are free to use, modify, and distribute it under the same terms.
         OpenAI for AI utility inspiration
         
         Stack Overflow and GitHub Community
+
+👨‍💻 Contributor
+Dhrumil Trivedi(Full Stack Developer & Project Lead) :Designed and developed the entire HireVerse platform — including system architecture, backend (Django models, views, and authentication), frontend (Bootstrap-based dashboards), database schema, AI utilities, and deployment setup. Responsible for full lifecycle: concept, development, testing, and documentation.
